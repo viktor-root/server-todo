@@ -12,7 +12,7 @@ auth.post('/register', async (req: any, res: any) => {
     const type = 0;
     const available = await availableLogin(req.body.login);
     if (available) {
-        const user = await register(req.body.login, bCrypt.hashSync(req.body.password, salt));
+        const user = await register(req.body.login, bCrypt.hashSync(req.body.password, salt), req.body.name);
         const token = jwt.sign({ id: user.id.toString() }, secret)
         res.json({ token, userId: user.id.toString() })
     } else {

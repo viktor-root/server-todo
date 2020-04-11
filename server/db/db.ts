@@ -31,6 +31,10 @@ Users.init({
         type: DataTypes.BLOB,
         allowNull: true
     },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
 }, {
     sequelize,
     modelName: "users"
@@ -82,10 +86,11 @@ export const login = async (login: string) => {
         }).catch((err: Error) => console.log(err));
 }
 
-export const register = async (login: string, password: string) => {
+export const register = async (login: string, password: string, name: string) => {
     return await Users.create({
         password,
         login,
+        name
     }, { raw: true }).then((res: any) => {
         return res;
     }).catch((err: Error) => console.log(err));
