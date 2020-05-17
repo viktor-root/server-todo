@@ -1,1 +1,1 @@
-export const secret = "auth blya";
+export const secret = "secretauthkey";

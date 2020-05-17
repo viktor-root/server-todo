@@ -177,7 +177,7 @@ export const getPostsByUser = async (user_id: number) => {
         return await user.getPosts({ raw: true })
             .then((res: any) => {
                 if (!res) {
-                    console.log("У этого пользователя нет статей");
+                    console.log("У этого пользователя нет заметок");
                     return null;
                 } else {
                     return res;

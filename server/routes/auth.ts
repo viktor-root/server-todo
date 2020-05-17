@@ -35,5 +35,4 @@ auth.post('/login', async (req: any, res: any) => {
         }
     }
 })
-
 export { auth }
