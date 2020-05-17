@@ -7,7 +7,7 @@ import { authMiddleWare } from './middleware/auth';
 import { post } from './routes/posts';
 
 
-const PORT = process.env.PORT || 80;
+const PORT = 3000 || process.env.PORT;
 const app = express();
 app.use(
     cors({
